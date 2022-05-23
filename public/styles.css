@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 body{
@@ -25,17 +26,25 @@ body{
 }
 
 button{
-    height: 7em;
+    height: 3em;
+    width: 3em;
 }
 
-#redButton{
+#redWrap .button{
     background-color: lightcoral;
 }
 
-#greenButton{
+#greenWrap .button{
     background-color: lightgreen;
 }
 
-#blueButton{
+#blueWrap .button{
     background-color: lightblue;
+}
+
+p{
+    height: 3em;
+    display: grid;
+    align-items: center;
+    justify-items: center;
 }

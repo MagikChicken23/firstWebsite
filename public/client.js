@@ -1,16 +1,18 @@
 console.log('Client-side code running');
 
-const buttons = document.getElementsByClassName("button")
+const counters = document.getElementsByClassName("counter")
 
-const redButton = document.getElementById('redButton');
-const greenButton = document.getElementById('greenButton');
-const blueButton = document.getElementById('blueButton');
+const redAdd = document.getElementById('redAdd');
+const redSubtract = document.getElementById('redSubtract');
+const greenAdd = document.getElementById('greenAdd');
+const greenSubtract = document.getElementById('greenSubtract');
+const blueAdd = document.getElementById('blueAdd');
+const blueSubtract = document.getElementById('blueSubtract');
 
-redButton.addEventListener('click', function(e) {
-  console.log('red button was clicked');
+redAdd.addEventListener('click', function(e) {
+  console.log('red plus was clicked');
 
-
-  fetch('/clickedred', {method: 'POST'})
+  fetch('/clickedredadd', {method: 'POST'})
     .then(function(response) {
       if(response.ok) {
         console.log('Click was recorded');
@@ -23,28 +25,10 @@ redButton.addEventListener('click', function(e) {
     });
 });
 
-greenButton.addEventListener('click', function(e) {
-    console.log('green button was clicked');
-  
-  
-    fetch('/clickedgreen', {method: 'POST'})
-      .then(function(response) {
-        if(response.ok) {
-          console.log('Click was recorded');
-          return;
-        }
-        throw new Error('Request failed.');
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-  });
+redSubtract.addEventListener('click', function(e) {
+  console.log('res minus was clicked');
 
-blueButton.addEventListener('click', function(e) {
-  console.log('blue button was clicked');
-
-
-  fetch('/clickedblue', {method: 'POST'})
+  fetch('/clickedredsubtract', {method: 'POST'})
     .then(function(response) {
       if(response.ok) {
         console.log('Click was recorded');
@@ -56,6 +40,76 @@ blueButton.addEventListener('click', function(e) {
       console.log(error);
     });
 });
+
+greenAdd.addEventListener('click', function(e) {
+  console.log('green plus was clicked');
+
+  fetch('/clickedgreenadd', {method: 'POST'})
+    .then(function(response) {
+      if(response.ok) {
+        console.log('Click was recorded');
+        return;
+      }
+      throw new Error('Request failed.');
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+});
+
+greenSubtract.addEventListener('click', function(e) {
+  console.log('green minus was clicked');
+
+  fetch('/clickedgreensubtract', {method: 'POST'})
+    .then(function(response) {
+      if(response.ok) {
+        console.log('Click was recorded');
+        return;
+      }
+      throw new Error('Request failed.');
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+});
+
+blueAdd.addEventListener('click', function(e) {
+  console.log('blue plus was clicked');
+
+  fetch('/clickedblueadd', {method: 'POST'})
+    .then(function(response) {
+      if(response.ok) {
+        console.log('Click was recorded');
+        return;
+      }
+      throw new Error('Request failed.');
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+});
+
+blueSubtract.addEventListener('click', function(e) {
+  console.log('blue minus was clicked');
+
+  fetch('/clickedbluesubtract', {method: 'POST'})
+    .then(function(response) {
+      if(response.ok) {
+        console.log('Click was recorded');
+        return;
+      }
+      throw new Error('Request failed.');
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+});
+
+
+
+
+
+
 
 setInterval(function() {
     fetch('/clicks', {method: 'GET'})
@@ -65,7 +119,7 @@ setInterval(function() {
       })
       .then(function(data) {
           for(let i = 0 ; i < 3 ; i++){
-            buttons[i].innerHTML = `Button was clicked ${data[i].count} times`;
+            counters[i].innerHTML = `${data[i].count}`;
           }
       })
       .catch(function(error) {
