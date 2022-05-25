@@ -11,7 +11,7 @@ async function main() {
 
     const MongoClient = require('mongodb').MongoClient;
     const uri =
-      'mongodb+srv://LuDO:Rath01gar@gettingstarted.ooalv.mongodb.net/?retryWrites=true&w=majority';
+      'mongodb+srv://MagikChicken23:Rath01gar@gettingstarted.etmkp.mongodb.net/?retryWrites=true&w=majority';
     const client = new MongoClient(uri, { useNewUrlParser: true });
     await client.connect();
 
@@ -34,7 +34,6 @@ async function main() {
           if (err) {
             return console.log(err);
           }
-          console.log(color,' click added to db');
           res.sendStatus(201);
         });
         
@@ -43,13 +42,10 @@ async function main() {
           if (err) {
             return console.log(err);
           }
-          console.log(color,' click subtracted from db');
           res.sendStatus(201);
         });
       }
     });
-
-
 
       // get the click data from the database
     app.get('/clicks', (req, res) => {

@@ -1,15 +1,7 @@
 console.log('Client-side code running');
 
 const counters = document.getElementsByClassName("counter")
-
 const buttons = document.getElementsByClassName("button")
-
-const redAdd = document.getElementById('redAdd');
-const redSubtract = document.getElementById('redSubtract');
-const greenAdd = document.getElementById('greenAdd');
-const greenSubtract = document.getElementById('greenSubtract');
-const blueAdd = document.getElementById('blueAdd');
-const blueSubtract = document.getElementById('blueSubtract');
 
 for(var i = 0 ; i < buttons.length ; i++){
   buttons[i].addEventListener("click", function(e){
