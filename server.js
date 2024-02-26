@@ -11,7 +11,7 @@ async function main() {
 
     const MongoClient = require('mongodb').MongoClient;
     const uri =
-      'mongodb+srv://MagikChicken23:Rath01gar@gettingstarted.etmkp.mongodb.net/?retryWrites=true&w=majority';
+      'INSERT URI HERE';
     const client = new MongoClient(uri, { useNewUrlParser: true });
     await client.connect();
 
